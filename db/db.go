@@ -40,10 +40,10 @@ func GetMongoClient() (*mongo.Client, error) {
 	return clientInstance, clientInstanceError
 }
 
-func SetupUsersDb(mongoClient *mongo.Client) *mongo.Collection {
-	usersDb := mongoClient.Database("twitter_db").Collection("users")
-	createUniqueIndices(usersDb, "email")
-	return usersDb
+func SetupProjectDb(mongoClient *mongo.Client) *mongo.Collection {
+	projectDb := mongoClient.Database("linkdrop_db").Collection("projects")
+	createUniqueIndices(projectDb, "projectId")
+	return projectDb
 }
 
 func SetupHashtagsDb(mongoClient *mongo.Client) *mongo.Collection {

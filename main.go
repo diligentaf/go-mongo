@@ -1,8 +1,10 @@
 package main
 
 import (
-	"fmt"
+	"go-mongo/db"
 	"go-mongo/router"
+	"go-mongo/store"
+	"log"
 	"os"
 
 	echoSwagger "github.com/swaggo/echo-swagger"
@@ -15,5 +17,10 @@ func main() {
 	}
 	r := router.New()
 	r.GET("/swagger/*", echoSwagger.WrapHandler)
-	fmt.Println(22)
+	mongoClient, err := db.GetMongoClient()
+	if err != nil {
+		log.Fatal(err)
+	}
+	projectDb := db.SetupProjectDb(mongoClient)
+	project := store.NewProjectStore(projectDb)
 }
