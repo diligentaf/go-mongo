@@ -1,6 +1,7 @@
 package main
 
 import (
+	"fmt"
 	"go-mongo/db"
 	"go-mongo/router"
 	"go-mongo/store"
@@ -21,6 +22,9 @@ func main() {
 	if err != nil {
 		log.Fatal(err)
 	}
+	_ = mongoClient
 	projectDb := db.SetupProjectDb(mongoClient)
 	project := store.NewProjectStore(projectDb)
+	_ = project
+	fmt.Println(111)
 }

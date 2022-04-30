@@ -1,0 +1,17 @@
+{
+    // IntelliSenseÎ•º ÏÇ¨Ïö©ÌïòÏó¨ Í∞ÄÎä•Ìïú ÌäπÏÑ±Ïóê ÎåÄÌï¥ ÏïåÏïÑÎ≥¥ÏÑ∏Ïöî.
+    // Í∏∞Ï°¥ ÌäπÏÑ±Ïóê ÎåÄÌïú ÏÑ§Î™ÖÏùÑ Î≥¥Î†§Î©¥ Í∞ÄÎ¶¨ÌÇµÎãàÎã§.
+    // ÏûêÏÑ∏Ìïú ÎÇ¥Ïö©ÏùÑ Î≥¥Î†§Î©¥ https://go.microsoft.com/fwlink/?linkid=830387ÏùÑ(Î•º) Î∞©Î¨∏ÌïòÏÑ∏Ïöî.
+    "version": "0.2.0",
+    "configurations": [
+        {
+            "name": "Launch",
+            "type": "go",
+            "request": "launch",
+            "mode": "auto",
+            "program": "${workspaceRoot}/main.go",
+            "env": {"ENV": "DEVELOPMENT"},
+            "args": []
+        }
+    ]
+}
