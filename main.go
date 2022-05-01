@@ -22,10 +22,10 @@ func main() {
 	if err != nil {
 		log.Fatal(err)
 	}
-	_ = mongoClient
+	g := r.Group("")
 	projectDb := db.SetupProjectDb(mongoClient)
 	project := store.NewProjectStore(projectDb)
 	h := handler.NewHandler(project)
-	_ = h
+	h.Register(g)
 	r.Logger.Fatal(r.Start("0.0.0.0:" + port))
 }
