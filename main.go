@@ -1,8 +1,8 @@
 package main
 
 import (
-	"fmt"
 	"go-mongo/db"
+	"go-mongo/handler"
 	"go-mongo/router"
 	"go-mongo/store"
 	"log"
@@ -25,6 +25,7 @@ func main() {
 	_ = mongoClient
 	projectDb := db.SetupProjectDb(mongoClient)
 	project := store.NewProjectStore(projectDb)
-	_ = project
-	fmt.Println(111)
+	h := handler.NewHandler(project)
+	_ = h
+	r.Logger.Fatal(r.Start("0.0.0.0:" + port))
 }
