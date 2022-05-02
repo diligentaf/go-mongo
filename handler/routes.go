@@ -8,15 +8,15 @@ import (
 )
 
 const (
-	porject = "/project"
+	projectPath = "/project"
 )
 
 func (h *Handler) Register(g *echo.Group) {
-	// g.GET("/", h.Dummy)
+	g.GET("/", h.Dummy)
 	jwtMiddleware := middleware.JWT(utils.JWTSecret)
 	_ = jwtMiddleware
-	// project := g.Group(project, jwtMiddleware)
-	// project.POST("", h.CreateProject)
+	pj := g.Group(projectPath, jwtMiddleware)
+	pj.POST("", h.Create)
 	// globalMiddleware := middleware.Global(utils.JWTSecret)
 	// g.POST(signUp, h.SignUp)
 	// g.POST(login, h.Login)

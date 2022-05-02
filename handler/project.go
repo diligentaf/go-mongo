@@ -1,6 +1,7 @@
 package handler
 
 import (
+	"errors"
 	"go-mongo/model"
 	"go-mongo/utils"
 	"net/http"
@@ -8,20 +9,24 @@ import (
 	"github.com/labstack/echo/v4"
 )
 
+func (h *Handler) Dummy(c echo.Context) error {
+	return c.JSON(http.StatusCreated, errors.New("hello world"))
+}
+
 // CreateTweet godoc
-// @Summary Create an tweet
-// @Description Create an tweet
-// @ID create-tweet
-// @Tags tweet
+// @Summary Create a project
+// @Description Create a project
+// @ID create-project
+// @Tags project
 // @Accept  json
 // @Produce  json
-// @Param tweet body tweetCreateRequest true "Tweet to create made of text and media"
-// @Success 201 {object} singleTweetResponse
+// @Param project body projectCreateRequest true "Project to create made of text and media"
+// @Success 201 {object} projectResponse
 // @Failure 404 {object} utils.Error
 // @Failure 422 {object} utils.Error
 // @Failure 500 {object} utils.Error
 // @Security ApiKeyAuth
-// @Router /tweets [post]
+// @Router /project [post]
 func (h *Handler) Create(c echo.Context) error {
 	u := model.NewProject()
 	req := &projectRegisterRequest{}
