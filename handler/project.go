@@ -38,18 +38,5 @@ func (h *Handler) Create(c echo.Context) error {
 	}
 	response := newProjectResponse(u)
 
-	//cookie := new(http.Cookie)
-	//cookie.Name = "Token"
-	//cookie.Value = response.User.Token
-	//cookie.Expires = time.Now().Add(24 * time.Hour)
-	//c.SetCookie(cookie)
-
-	//header('Access-Control-Allow-Origin', yourExactHostname);
-
-	//c.Response().Header().Set(echo.HeaderAccessControlAllowOrigin, "http://localhost:3000")
-	//c.Response().Header().Add(echo.HeaderAccessControlAllowCredentials, "true")
-	//c.Response().Header().Add(echo.HeaderAccessControlAllowOrigin, "http://localhost:3000")
-	//c.Response().Header().Add(echo.HeaderAccessControlAllowHeaders, "Origin, X-Requested-With, Content-Type, Accept")
-	//c.Response().Header().
 	return c.JSON(http.StatusCreated, response)
 }
