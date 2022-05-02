@@ -1,3 +1,6 @@
+
+# install / clean up libraries
+go mod tidy
 # go-mongo
 sample go backend with mongo usage
 
