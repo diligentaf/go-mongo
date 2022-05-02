@@ -3,7 +3,7 @@ package model
 import (
 	"errors"
 
-	uuid "github.com/google/uuid"
+	"github.com/google/uuid"
 	"golang.org/x/crypto/bcrypt"
 )
 
