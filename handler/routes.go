@@ -1,9 +1,6 @@
 package handler
 
 import (
-	"go-mongo/router/middleware"
-	"go-mongo/utils"
-
 	"github.com/labstack/echo/v4"
 )
 
@@ -13,9 +10,10 @@ const (
 
 func (h *Handler) Register(g *echo.Group) {
 	g.GET("/", h.Dummy)
-	jwtMiddleware := middleware.JWT(utils.JWTSecret)
-	_ = jwtMiddleware
-	pj := g.Group(projectPath, jwtMiddleware)
+	// jwtMiddleware := middleware.JWT(utils.JWTSecret)
+	// _ = jwtMiddleware
+	// pj := g.Group(projectPath, jwtMiddleware)
+	pj := g.Group(projectPath)
 	pj.POST("", h.Create)
 	// globalMiddleware := middleware.Global(utils.JWTSecret)
 	// g.POST(signUp, h.SignUp)
