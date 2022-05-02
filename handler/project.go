@@ -13,7 +13,7 @@ func (h *Handler) Dummy(c echo.Context) error {
 	return c.JSON(http.StatusCreated, errors.New("hello world"))
 }
 
-// CreateTweet godoc
+// CreateProject godoc
 // @Summary Create a project
 // @Description Create a project
 // @ID create-project
