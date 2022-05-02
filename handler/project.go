@@ -13,14 +13,14 @@ func (h *Handler) Dummy(c echo.Context) error {
 	return c.JSON(http.StatusCreated, errors.New("hello world"))
 }
 
-// CreateProject godoc
+// Create godoc
 // @Summary Create a project
 // @Description Create a project
 // @ID create-project
 // @Tags project
 // @Accept  json
 // @Produce  json
-// @Param project body projectCreateRequest true "Project to create made of text and media"
+// @Param project body projectRegisterRequest true "Project to create made of text and media"
 // @Success 201 {object} projectResponse
 // @Failure 404 {object} utils.Error
 // @Failure 422 {object} utils.Error
