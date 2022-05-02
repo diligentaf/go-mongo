@@ -84,7 +84,8 @@ const docTemplate = `{
                     "required": [
                         "email",
                         "name",
-                        "password"
+                        "password",
+                        "token_address"
                     ],
                     "properties": {
                         "email": {
@@ -94,6 +95,9 @@ const docTemplate = `{
                             "type": "string"
                         },
                         "password": {
+                            "type": "string"
+                        },
+                        "token_address": {
                             "type": "string"
                         }
                     }

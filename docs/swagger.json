@@ -72,7 +72,8 @@
                     "required": [
                         "email",
                         "name",
-                        "password"
+                        "password",
+                        "token_address"
                     ],
                     "properties": {
                         "email": {
@@ -82,6 +83,9 @@
                             "type": "string"
                         },
                         "password": {
+                            "type": "string"
+                        },
+                        "token_address": {
                             "type": "string"
                         }
                     }

@@ -9,10 +9,13 @@ definitions:
             type: string
           password:
             type: string
+          token_address:
+            type: string
         required:
         - email
         - name
         - password
+        - token_address
         type: object
     type: object
   handler.projectResponse:

@@ -3,19 +3,21 @@ package model
 import (
 	"errors"
 
+	uuid "github.com/google/uuid"
 	"golang.org/x/crypto/bcrypt"
 )
 
 type Project struct {
-	UID      string `json:"uid" bson:"_id"`
-	Name     string `json:"name" bson:"name"`
-	Email    string `json:"email" bson:"email"`
-	Password string `json:"password" bson:"password"`
-	Token    string `json:"token" bson:"token"`
+	UID          string `json:"uid" bson:"uid,omitempty"`
+	Name         string `json:"name" bson:"name"`
+	Email        string `json:"email" bson:"email"`
+	Password     string `json:"password" bson:"password"`
+	TokenAddress string `json:"token_address" bson:"token_address"`
 }
 
 func NewProject() *Project {
 	var u Project
+	u.UID = uuid.New().String()
 	u.Name = "from model new project"
 	return &u
 }

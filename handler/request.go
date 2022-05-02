@@ -9,10 +9,11 @@ import (
 // Registration request
 type projectRegisterRequest struct {
 	Project struct {
-		Name     string `json:"name" validate:"required"`
-		Email    string `json:"email" validate:"required,email"`
-		Password string `json:"password" validate:"required"`
-	} `json:"project"`
+		Name         string `json:"name" validate:"required"`
+		Email        string `json:"email" validate:"required,email"`
+		Password     string `json:"password" validate:"required"`
+		TokenAddress string `json:"token_address" validate:"required"`
+	}
 }
 
 func (r *projectRegisterRequest) bind(c echo.Context, u *model.Project) error {
@@ -24,6 +25,7 @@ func (r *projectRegisterRequest) bind(c echo.Context, u *model.Project) error {
 	}
 	u.Name = r.Project.Name
 	u.Email = r.Project.Email
+	u.TokenAddress = r.Project.TokenAddress
 	h, err := u.HashPassword(r.Project.Password)
 	if err != nil {
 		return err

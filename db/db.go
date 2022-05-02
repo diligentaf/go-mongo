@@ -42,7 +42,7 @@ func GetMongoClient() (*mongo.Client, error) {
 
 func SetupProjectDb(mongoClient *mongo.Client) *mongo.Collection {
 	projectDb := mongoClient.Database("linkdrop_db").Collection("projects")
-	createUniqueIndices(projectDb, "projectId")
+	createUniqueIndices(projectDb, "uid")
 	return projectDb
 }
 
