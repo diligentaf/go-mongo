@@ -15,6 +15,8 @@ func (h *Handler) Register(g *echo.Group) {
 	// g.GET("/", h.Dummy)
 	jwtMiddleware := middleware.JWT(utils.JWTSecret)
 	_ = jwtMiddleware
+	// project := g.Group(project, jwtMiddleware)
+	// project.POST("", h.CreateProject)
 	// globalMiddleware := middleware.Global(utils.JWTSecret)
 	// g.POST(signUp, h.SignUp)
 	// g.POST(login, h.Login)
@@ -48,8 +50,6 @@ func (h *Handler) Register(g *echo.Group) {
 	// tweetsGlobal.POST("/get", h.GetTweets)
 	// tweetsGlobal.GET("/:id/list", h.GetTweetLikeAndRetweetList)
 
-	// tweets := g.Group(tweets, jwtMiddleware)
-	// tweets.POST("", h.CreateTweet)
 	// tweets.DELETE("/:id", h.DeleteTweet)
 	// tweets.POST("/:id/like", h.Like)
 	// tweets.DELETE("/:id/like", h.UnLike)

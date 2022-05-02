@@ -3,28 +3,20 @@ package model
 import (
 	"errors"
 
-	"go.mongodb.org/mongo-driver/bson/primitive"
 	"golang.org/x/crypto/bcrypt"
 )
 
 type Project struct {
-	Name        string `json:"name" bson:"name"`
-	Projectname string `json:"projectname" bson:"_id"`
-	Email       string `json:"email" bson:"email"`
-	Password    string `json:"password" bson:"password"`
-
-	// Fluff shown to project as profile
-	Bio            string `json:"bio" bson:"bio"`
-	ProfilePicture string `json:"profile_picture" bson:"profile_picture"`
-	HeaderPicture  string `json:"header_picture" bson:"header_picture"`
-
-	Tweets *[]primitive.ObjectID `json:"tweets" bson:"tweets"`
+	UID      string `json:"uid" bson:"_id"`
+	Name     string `json:"name" bson:"name"`
+	Email    string `json:"email" bson:"email"`
+	Password string `json:"password" bson:"password"`
+	Token    string `json:"token" bson:"token"`
 }
 
 func NewProject() *Project {
 	var u Project
-	u.Name = "Twitter Project "
-	u.Tweets = &[]primitive.ObjectID{}
+	u.Name = "from model new project"
 	return &u
 }
 
